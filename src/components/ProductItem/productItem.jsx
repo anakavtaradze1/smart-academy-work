@@ -1,19 +1,17 @@
 "use client";
 import Image from "next/image";
-import styles from "./ProductItem.module.css";
+import styles from "./productItem.module.css";
 
 const ProductItem = ({
   product,
   products,
   setProducts,
-  deletedProducts,
   setDeletedProducts,
   hideDeleteButton = false,
 }) => {
   const handleDeleteProduct = (id) => {
-    const deletedProduct = products.find((prod) => prod.id === id);
     setProducts(products.filter((prod) => prod.id !== id));
-    setDeletedProducts([...deletedProducts, deletedProduct]);
+    setDeletedProducts((prev) => [...prev, product]);
   };
 
   return (

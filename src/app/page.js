@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
-import ProductItem from "./components/ProductItem/ProductItem";
+import ProductItem from "../components/ProductItem/productItem";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -22,7 +22,6 @@ export default function Home() {
             product={product}
             products={products}
             setProducts={setProducts}
-            deletedProducts={deletedProducts}
             setDeletedProducts={setDeletedProducts}
           />
         ))}
